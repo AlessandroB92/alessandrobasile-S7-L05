@@ -50,7 +50,6 @@ function sendGetRequest() {
             data.forEach(product => {
                 const listItem = document.createElement('li');
                 productList.style.padding = '0';
-                listItem.style.color = 'red';
                 listItem.style.margin = '5px 0px'
                 const simplifiedProduct = {
                     _id: product._id,

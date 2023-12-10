@@ -20,19 +20,29 @@ fetch(apiUrl, {
 });
 function createProductCard(product) {
     const card = document.createElement("div");
-    card.classList.add("col-sm-6", "col-md-3","col-lg-2", "mb-4");
+    card.classList.add("col-sm-6", "col-md-3", "col-lg-2", "mb-4");
 
     card.innerHTML = `
         <div class="card h-100">
             <img src="${product.imageUrl}" class="card-img-top img-fluid" alt="${product.name}">
             <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
-                <p class="card-text">${product.description}</p>
-                <p class="card-text"><strong>Brand:</strong> ${product.brand}</p>
-                <p class="card-text"><strong>Price:</strong> $${product.price}</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" onclick="openModal('${product.name}', '${product.description}', '${product.brand}', '${product.price}')">
+                  Details
+                </button>
             </div>
         </div>
     `;
 
     return card;
+}
+
+function openModal(name, description, brand, price) {
+    const modalBody = document.getElementById("modalBody");
+    modalBody.innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Description:</strong> ${description}</p>
+        <p><strong>Brand:</strong> ${brand}</p>
+        <p><strong>Price:</strong> $${price}</p>
+    `;
 }
