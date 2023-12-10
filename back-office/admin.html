@@ -29,16 +29,20 @@
         <input type="number" id="productPrice" name="productPrice" step="0.01" required>
 
         <button type="button" onclick="sendGetRequest()">GET</button>
-        <button type="button" onclick="sendPostRequest()">POST</button>
+        <button type="button" onclick="sendPostRequest()">AGGIUNGI PRODOTTO</button>
+
+        <div id="productListContainer"></div>
 
         <h2>Modifica</h2>
         <div id="editForm">
-            <button type="button" onclick="showEditForm()">MODIFICA</button>
+            <button id="modify" type="button" onclick="showEditForm()">MODIFICA</button>
             <div id="editOptions" style="display: none;">
                 <label for="productId">ID Prodotto:</label>
                 <input type="text" id="productId" name="productId" required>
             </div>
         </div>
+
+        <button id="resetAll" type="button" onclick="resetPage()">RESET ALL</button>
     </form>
 
     <script src="/back-office/assets/back-office.js"></script>
