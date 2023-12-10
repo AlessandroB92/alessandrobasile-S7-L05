@@ -23,7 +23,7 @@ function createProductCard(product) {
     card.classList.add("col-sm-6", "col-md-3", "col-lg-2", "mb-4");
 
     card.innerHTML = `
-        <div class="card h-100">
+        <div class="card shadow p-3 mb-5 bg-body-black h-100">
             <img src="${product.imageUrl}" class="card-img-top img-fluid" alt="${product.name}">
             <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
